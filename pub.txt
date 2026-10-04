@@ -1,0 +1,7 @@
+Sharing a small native Windows C++ example that demonstrates the core steps implemented in ProcessHollowing.cpp. Intended for code review and defensive research.
+•	Creates a new process in a suspended state (CreateProcessA)
+•	Opens and reads a PE file into an allocated memory buffer
+•	Validates DOS header (MZ) and locates IMAGE_NT_HEADERS
+•	Obtains thread CONTEXT and reads the target PEB/image base (ReadProcessMemory)
+•	Inspects base relocations and resolves NtUnmapViewOfSection from ntdll
+•	Prints diagnostic info and pauses for inspection
